@@ -1,12 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define TLE_LIMIT 99999999
+#define printSpace 16
+
+int NodeVisited;
+
 // Depth-Limited Search using stack (iterative)
 bool dlsIter(int amount, int depthLimit, const vector<int>& coins) {
     stack<pair<int,int>> st;
     st.push(make_pair(amount, depthLimit));
 
     while (!st.empty()) {
+        NodeVisited++;
+        if(NodeVisited>TLE_LIMIT) return true;
         pair<int,int> state = st.top();
         st.pop();
 
@@ -32,6 +39,7 @@ int coinChangeIDFS(vector<int>& coins, int amount) {
 
     for (int limit = 0; limit <= maxDepth; ++limit) {
         if (dlsIter(amount, limit, coins)) {
+            if(NodeVisited>TLE_LIMIT) return -2;
             return limit;
         }
     }
@@ -50,36 +58,43 @@ int coinChangeDP(vector<int>& coins, int amount) {
 }
 
 int main(){
-    ofstream fout("output.txt");
+    ofstream fout("IDFSoutput.txt");
     fout<<std::left;
-    //ifstream fin("RandomTestCases.txt");
-    ifstream fin("EdgeTestCases.txt");
-    fout<<"**********  A* algorithm  **********"<<endl;
+    ifstream fin("../FinalTest.txt");
+    if (!fin.is_open()) {
+        cerr<<"Failed to open EdgeTestCases.txt"<<endl;
+    }
+    fout<<"****************************  IDFS ALGORITHM  ******************************"<<endl;
+    fout<<"**************************************************************************"<<endl;
     double correctCount=0,wrongCount=0;
     int n;
-    fout<<"Astar-Solution  DP-Solution     Status"<<endl;
-    fout<<"--------------  -----------  ----------------------------------------------"<<endl;
+    fout<<"IDFS-Solution   Solution        Time(nodes)     Status"<<endl;
+    fout<<"--------------  -----------     -----------     --------------------------"<<endl;
     for(fin>>n;n!=-1;fin>>n){
         int amount;
         fin>>amount;
         vector<int> coins(n);
         for(int i=0;i<n;i++)fin>>coins[i];
-        int AstarSolution= coinChangeIDFS(coins,amount);
+        NodeVisited=0;
+        int IDFSSolution= coinChangeIDFS(coins,amount);
         int dpSolution = coinChangeDP(coins,amount);
-        fout<<setw(16)<<AstarSolution<<setw(16)<<dpSolution;
-        if(AstarSolution==dpSolution){
+        fout<<setw(printSpace)<<IDFSSolution<<setw(printSpace)<<dpSolution<<setw(printSpace)<<NodeVisited;
+        if(IDFSSolution==dpSolution){
             fout<<"Success"<<endl;
             correctCount++;
+        }
+        else if(IDFSSolution==-2){
+            fout<<"TLE"<<endl;
+            wrongCount++;
         }
         else {
             fout<<"Fail"<<endl;
             wrongCount++;
         }
     }
-    fout<<"*****************"<<endl;
-    fout<<"*****************"<<endl;
+    fout<<"**************************************************************************"<<endl;
+    fout<<"**************************************************************************"<<endl;
     fout<<"Success : "<<correctCount<<endl;
     fout<<"Fail    : "<<wrongCount<<endl;
-    fout<<"Accuracy: "<<((correctCount)/(correctCount+wrongCount))*100<<endl;
+    fout<<"Accuracy: "<<((correctCount)/(correctCount+wrongCount))*100<<"%"<<endl;
 }
-

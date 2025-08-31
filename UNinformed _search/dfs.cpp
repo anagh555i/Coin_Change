@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define TLE_LIMIT 99999999
+#define printSpace 16
+
+int NodeVisited;
+
 // DFS using explicit stack (non-recursive)
 int coinChangeDFS(vector<int>& coins, int amount) {
     stack<pair<int, int>> st;
@@ -9,6 +14,8 @@ int coinChangeDFS(vector<int>& coins, int amount) {
     int minCoins = INT_MAX;
 
     while (!st.empty()) {
+        NodeVisited++;
+        if(NodeVisited>TLE_LIMIT) return -2;
         pair<int, int> state = st.top();
         st.pop();
 
@@ -43,35 +50,43 @@ int coinChangeDP(vector<int>& coins, int amount) {
 }
 
 int main(){
-    ofstream fout("output.txt");
+    ofstream fout("DFSoutput.txt");
     fout<<std::left;
-    ifstream fin("RandomTestCases.txt");
-    //ifstream fin("EdgeTestCases.txt");
-    fout<<"**********  A* algorithm  **********"<<endl;
+    ifstream fin("../FinalTest.txt");
+    if (!fin.is_open()) {
+        cerr<<"Failed to open EdgeTestCases.txt"<<endl;
+    }
+    fout<<"****************************  DFS ALGORITHM  ******************************"<<endl;
+    fout<<"**************************************************************************"<<endl;
     double correctCount=0,wrongCount=0;
     int n;
-    fout<<"Astar-Solution  DP-Solution     Status"<<endl;
-    fout<<"--------------  -----------  ----------------------------------------------"<<endl;
+    fout<<"DFS-Solution    Solution        Time(nodes)     Status"<<endl;
+    fout<<"--------------  -----------     -----------     --------------------------"<<endl;
     for(fin>>n;n!=-1;fin>>n){
         int amount;
         fin>>amount;
         vector<int> coins(n);
         for(int i=0;i<n;i++)fin>>coins[i];
-        int AstarSolution= coinChangeDFS(coins,amount);
+        NodeVisited=0;
+        int DFSSolution= coinChangeDFS(coins,amount);
         int dpSolution = coinChangeDP(coins,amount);
-        fout<<setw(16)<<AstarSolution<<setw(16)<<dpSolution;
-        if(AstarSolution==dpSolution){
+        fout<<setw(printSpace)<<DFSSolution<<setw(printSpace)<<dpSolution<<setw(printSpace)<<NodeVisited;
+        if(DFSSolution==dpSolution){
             fout<<"Success"<<endl;
             correctCount++;
+        }
+        else if(DFSSolution==-2){
+            fout<<"TLE"<<endl;
+            wrongCount++;
         }
         else {
             fout<<"Fail"<<endl;
             wrongCount++;
         }
     }
-    fout<<"*****************"<<endl;
-    fout<<"*****************"<<endl;
+    fout<<"**************************************************************************"<<endl;
+    fout<<"**************************************************************************"<<endl;
     fout<<"Success : "<<correctCount<<endl;
     fout<<"Fail    : "<<wrongCount<<endl;
-    fout<<"Accuracy: "<<((correctCount)/(correctCount+wrongCount))*100<<endl;
+    fout<<"Accuracy: "<<((correctCount)/(correctCount+wrongCount))*100<<"%"<<endl;
 }
