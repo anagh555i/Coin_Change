@@ -75,10 +75,14 @@ def bestFS(tgt,coins):
     dv=coin_change(coins,t)
     if(r!=-1):
         r=len(moves)
-    if dv==r:
+    if n>10000:
+        s="TLE"
+        r=-1
+    elif dv==r:
         s="Success"
     else :
         s="Fail"
+    
     print(r,dv,n,s,sep="       ")
     return r
 
@@ -102,6 +106,7 @@ while(inp!='-1'):
     coins=[eval(i) for i in coins ]  
     #print("for amount",t,"in coins",coins,":")    
     #print(n,": target",t,"coins",coins)
+    coins.sort(reverse=True)
     v=bestFS(t,coins)
     dv=coin_change(coins,t)
     #print(v,dv)
