@@ -73,11 +73,13 @@ def bestFS(tgt,coins):
         moves.append(d[x]-x)#d[d[x]]-d[x])
         x=d[x]
     dv=coin_change(coins,t)
-    if dv==len(moves):
+    if(r!=-1):
+        r=len(moves)
+    if dv==r:
         s="Success"
     else :
         s="Fail"
-    print(len(moves),dv,n,s,sep="       ")
+    print(r,dv,n,s,sep="       ")
     return r
 
 '''
