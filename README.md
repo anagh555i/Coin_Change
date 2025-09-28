@@ -1,6 +1,10 @@
 # Search Algorithms for Coin Change Problem
 **Assignment 1 - Structures and Strategies of State Space Search**
 
+## Algorithm Classification Overview
+
+![Algorithm Hierarchy](./diagrams/algorithm_hierarchy.png)
+
 ## Problem Formulation
 
 The coin change problem is formulated as a state-space search where:
@@ -9,6 +13,10 @@ The coin change problem is formulated as a state-space search where:
 - **Goal State**: Amount = 0
 - **Actions**: Subtract available coin denominations
 - **Cost**: Number of coins used (search depth)
+
+## Search Tree Visualization
+
+![State Space Search](./diagrams/search_tree.png)
 
 ## Algorithm Implementations
 
@@ -50,7 +58,11 @@ The coin change problem is formulated as a state-space search where:
 - **Properties**: Incomplete (local optima), not optimal
 - **Termination**: Goal state or local optimum
 
+![Hill Climbing Local Optimum Example](./diagrams/hill_climbing_example.png)
+
 ## Heuristic Analysis
+
+![Heuristic Decision Flow](./diagrams/heuristic_flow.png)
 
 | Algorithm | Heuristic | Admissible | Consistent | Optimal |
 |-----------|-----------|------------|------------|---------|
@@ -62,6 +74,8 @@ The coin change problem is formulated as a state-space search where:
 The A* heuristic is admissible because it represents the theoretical minimum coins needed (using only the largest denomination), never overestimating the true cost.
 
 ## Performance Results
+
+![Algorithm Performance Comparison](./diagrams/performance_chart.png)
 
 Tested on 215 cases from comprehensive test suite:
 
@@ -83,6 +97,10 @@ Tested on 215 cases from comprehensive test suite:
 3. **Local Search Limitations**: Hill climbing demonstrates the fastest execution but suffers from local optima, achieving only 38% success rate due to the non-convex nature of the coin change search landscape.
 
 4. **Search Space Characteristics**: The coin change problem exhibits multiple local optima where greedy strategies fail, requiring systematic search (BFS/A*) or informed guidance with admissible heuristics.
+
+## Complexity Analysis
+
+![Time vs Space Complexity](./diagrams/complexity_analysis.png)
 
 ## Implementation Details
 
