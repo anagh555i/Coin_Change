@@ -1,0 +1,224 @@
+****************************  HILL CLIMBING ALGORITHM  ****************************
+**********************************************************************************
+HC-Solution     DP-Solution     Time(nodes)     Status
+--------------  -----------     -----------     --------------------------
+4               4               4               Success
+-1              4               5               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+3               3               3               Success
+-1              5               5               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+5               5               5               Success
+-1              2               3               Fail/Local Optimum
+-1              5               3               Fail/Local Optimum
+6               5               6               Fail/Local Optimum
+1               1               1               Success
+2               2               2               Success
+8               8               8               Success
+-1              2               2               Fail/Local Optimum
+4               4               4               Success
+2               2               2               Success
+13              13              13              Success
+-1              4               6               Fail/Local Optimum
+7               7               7               Success
+5               5               5               Success
+-1              2               4               Fail/Local Optimum
+3               3               3               Success
+7               6               7               Fail/Local Optimum
+4               4               4               Success
+2               2               2               Success
+-1              -1              2               Fail/Local Optimum
+3               3               3               Success
+-1              4               5               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+4               3               4               Fail/Local Optimum
+-1              4               3               Fail/Local Optimum
+2               2               2               Success
+-1              -1              4               Fail/Local Optimum
+5               5               5               Success
+2               2               2               Success
+7               5               7               Fail/Local Optimum
+3               3               3               Success
+2               2               2               Success
+-1              5               5               Fail/Local Optimum
+3               3               3               Success
+3               3               3               Success
+-1              -1              8               Fail/Local Optimum
+3               3               3               Success
+13              13              13              Success
+-1              3               5               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+8               6               8               Fail/Local Optimum
+-1              4               4               Fail/Local Optimum
+2               2               2               Success
+5               5               5               Success
+-1              6               6               Fail/Local Optimum
+3               3               3               Success
+8               8               8               Success
+-1              11              10              Fail/Local Optimum
+4               4               4               Success
+-1              4               4               Fail/Local Optimum
+-1              4               3               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+-1              3               4               Fail/Local Optimum
+-1              2               2               Fail/Local Optimum
+-1              4               3               Fail/Local Optimum
+4               4               4               Success
+6               4               6               Fail/Local Optimum
+-1              6               6               Fail/Local Optimum
+-1              5               5               Fail/Local Optimum
+-1              4               4               Fail/Local Optimum
+5               4               5               Fail/Local Optimum
+-1              3               4               Fail/Local Optimum
+4               4               4               Success
+11              11              11              Success
+-1              13              13              Fail/Local Optimum
+-1              -1              7               Fail/Local Optimum
+-1              4               5               Fail/Local Optimum
+-1              4               4               Fail/Local Optimum
+3               3               3               Success
+6               6               6               Success
+4               4               4               Success
+4               4               4               Success
+5               5               5               Success
+-1              5               4               Fail/Local Optimum
+-1              9               7               Fail/Local Optimum
+2               2               2               Success
+-1              6               4               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+-1              9               11              Fail/Local Optimum
+3               3               3               Success
+5               3               5               Fail/Local Optimum
+2               2               2               Success
+4               4               4               Success
+-1              6               6               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+5               3               5               Fail/Local Optimum
+2               2               2               Success
+5               5               5               Success
+-1              6               5               Fail/Local Optimum
+3               3               3               Success
+6               6               6               Success
+-1              5               5               Fail/Local Optimum
+8               6               8               Fail/Local Optimum
+-1              11              14              Fail/Local Optimum
+-1              9               9               Fail/Local Optimum
+-1              3               4               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+-1              6               5               Fail/Local Optimum
+11              11              11              Success
+5               4               5               Fail/Local Optimum
+-1              -1              2               Fail/Local Optimum
+3               3               3               Success
+-1              4               4               Fail/Local Optimum
+-1              5               6               Fail/Local Optimum
+2               2               2               Success
+7               7               7               Success
+3               3               3               Success
+14              9               14              Fail/Local Optimum
+-1              15              12              Fail/Local Optimum
+-1              7               10              Fail/Local Optimum
+3               3               3               Success
+-1              7               2               Fail/Local Optimum
+-1              7               8               Fail/Local Optimum
+-1              2               3               Fail/Local Optimum
+-1              2               2               Fail/Local Optimum
+-1              5               5               Fail/Local Optimum
+-1              8               7               Fail/Local Optimum
+-1              4               4               Fail/Local Optimum
+4               4               4               Success
+2               2               2               Success
+5               4               5               Fail/Local Optimum
+-1              5               6               Fail/Local Optimum
+-1              -1              4               Fail/Local Optimum
+3               3               3               Success
+-1              6               6               Fail/Local Optimum
+5               5               5               Success
+-1              5               5               Fail/Local Optimum
+6               4               6               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+2               2               2               Success
+3               3               3               Success
+5               5               5               Success
+3               3               3               Success
+-1              7               7               Fail/Local Optimum
+3               3               3               Success
+5               5               5               Success
+-1              -1              3               Fail/Local Optimum
+-1              5               6               Fail/Local Optimum
+5               3               5               Fail/Local Optimum
+-1              4               4               Fail/Local Optimum
+2               2               2               Success
+-1              4               4               Fail/Local Optimum
+7               7               7               Success
+-1              5               6               Fail/Local Optimum
+3               3               3               Success
+-1              5               5               Fail/Local Optimum
+4               4               4               Success
+6               5               6               Fail/Local Optimum
+-1              4               5               Fail/Local Optimum
+-1              4               5               Fail/Local Optimum
+-1              9               9               Fail/Local Optimum
+6               6               6               Success
+4               4               4               Success
+2               2               2               Success
+-1              5               4               Fail/Local Optimum
+9               8               9               Fail/Local Optimum
+-1              11              11              Fail/Local Optimum
+-1              3               4               Fail/Local Optimum
+-1              12              8               Fail/Local Optimum
+4               4               4               Success
+-1              4               6               Fail/Local Optimum
+1               1               1               Success
+-1              6               7               Fail/Local Optimum
+3               3               3               Success
+-1              4               4               Fail/Local Optimum
+-1              -1              3               Fail/Local Optimum
+-1              8               5               Fail/Local Optimum
+2               2               2               Success
+-1              6               4               Fail/Local Optimum
+9               8               9               Fail/Local Optimum
+4               4               4               Success
+-1              -1              6               Fail/Local Optimum
+-1              13              13              Fail/Local Optimum
+6               4               6               Fail/Local Optimum
+3               3               3               Success
+4               3               4               Fail/Local Optimum
+4               4               4               Success
+-1              7               6               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+-1              -1              5               Fail/Local Optimum
+-1              3               3               Fail/Local Optimum
+-1              6               6               Fail/Local Optimum
+-1              7               7               Fail/Local Optimum
+4               4               4               Success
+2               2               2               Success
+-1              -1              2               Fail/Local Optimum
+1               1               1               Success
+-1              769             768             Fail/Local Optimum
+-1              -1              2               Fail/Local Optimum
+-1              -1              1               Fail/Local Optimum
+3               2               3               Fail/Local Optimum
+3227            3226            3227            Fail/Local Optimum
+-1              100             21              Fail/Local Optimum
+204             204             204             Success
+-1              -1              101             Fail/Local Optimum
+-1              33              33              Fail/Local Optimum
+25              25              25              Success
+-1              5               5               Fail/Local Optimum
+-1              192             189             Fail/Local Optimum
+78              78              78              Success
+-1              53              52              Fail/Local Optimum
+161             161             161             Success
+-1              -1              41              Fail/Local Optimum
+-1              159             157             Fail/Local Optimum
+-1              12              11              Fail/Local Optimum
+-1              344             344             Fail/Local Optimum
+-1              37              36              Fail/Local Optimum
+-1              -1              1               Fail/Local Optimum
+-2              99999999        100000          TLE
+**********************************************************************************
+**********************************************************************************
+Success : 82
+Fail    : 133
+Accuracy: 38.1395%
