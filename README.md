@@ -79,14 +79,16 @@ The A* heuristic is admissible because it represents the theoretical minimum coi
 
 Tested on 215 cases from comprehensive test suite:
 
-| Algorithm | Success Rate | Avg Nodes | Time Complexity | Space Complexity |
-|-----------|--------------|-----------|-----------------|-------------------|
-| BFS | ~95% | 40-120 | O(b^d) | O(b^d) |
-| DFS | Variable | Variable | O(b^m) | O(bm) |
-| IDFS | ~95% | Variable | O(b^d) | O(bd) |
-| Best First | ~70% | 5-15 | O(b^d) | O(b^d) |
-| A* | ~95% | 30-80 | O(b^d) | O(b^d) |
-| Hill Climbing | 38% | 1-10 | O(kd) | O(1) |
+| Algorithm | Success Rate | Successes | Failures | TLEs | Avg Nodes | Time Complexity | Space Complexity |
+|-----------|--------------|-----------|----------|------|-----------|-----------------|-------------------|
+| BFS | 99.53% | 214 | 0 | 1 | 40-120 | O(b^d) | O(b^d) |
+| DFS | 42.79% | 91 | 0 | 124 | Variable | O(b^m) | O(bm) |
+| IDFS | 93.02% | 199 | 0 | 16 | Variable | O(b^d) | O(bd) |
+| Best First | 78.60% | 168 | 46 | 1 | 5-15 | O(b^d) | O(b^d) |
+| A* | 99.53% | 214 | 0 | 1 | 30-80 | O(b^d) | O(b^d) |
+| Hill Climbing | 38.14% | 82 | 132* | 1 | 1-10 | O(kd) | O(1) |
+
+*Most Hill Climbing failures are due to local optima (132/133 failures)
 
 ## Key Findings
 
